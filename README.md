@@ -6,6 +6,7 @@
 ### Exercícios da matéria de Estrutura de Dados 2 de 2025.1 de Ciências da Computação
 
 #### Atividade em Sala
+- [ ] Atividade Slide dia 29/04
 #### Ativadades do Sigaa
 
 ### Ferramentas e linguagens utilizadas:
