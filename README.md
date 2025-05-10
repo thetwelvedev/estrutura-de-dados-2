@@ -10,7 +10,9 @@
 
 #### Atividade em Sala
 - [ ] Atividade Slide dia 29/04
-- [ ] Atividade Slide dia 
+- [ ] Atividade Slide dia 06/05
+- [ ] Atividsde Slide dia 08/05
+
 #### Ativadades do Sigaa
 
 ### Ferramentas e linguagens utilizadas:
