@@ -8,9 +8,16 @@
 ### Assutos estudados
 >Árvores..
 
-#### Atividade em Sala
-- [ ] Atividade Slide dia 29/04
-#### Ativadades do Sigaa
+#### Atividade para o Sigaa
+- [x] Atividade 1(Slide 2) - Atividade Escrita
+- [x] Atividade 2(Slide 5) - Formulário
+
+### Atividade em Sala
+- [ ] Atividade(Slide 6)
+
+#### Trabalho Prático
+- [ ] Trabalho Prático 1(Slide 3) - Árvore Binária Expressão Aritmética 
+- [ ] Trabalho Prático 2(Slide 4) - Árvore Binaria de Busca e Árvore AVL
 
 ### Ferramentas e linguagens utilizadas:
 <div>
