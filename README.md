@@ -8,15 +8,9 @@
 ### Assutos estudados
 >Árvores..
 
-#### Atividade para o Sigaa
-- [x] Atividade 1(Slide 2) - Atividade Escrita
-- [x] Atividade 2(Slide 5) - Formulário
-
-### Atividade em Sala
-- [ ] Atividade(Slide 6)
-
-#### Trabalho Prático
-- [ ] Trabalho Prático 1(Slide 3) - Algoritmo para Construção de Árvore Binária a partir de Expressões Aritméticas
+#### Atividade em Sala
+- [ ] Atividade Slide dia 29/04
+#### Ativadades do Sigaa
 
 ### Ferramentas e linguagens utilizadas:
 <div>
