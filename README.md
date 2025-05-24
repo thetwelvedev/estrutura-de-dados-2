@@ -6,14 +6,14 @@
 ### Exercícios da matéria de Estrutura de Dados 2 de 2025.1 de Ciências da Computação
 
 ### Assutos estudados
->Árvores..
+>Árvores, Árvores Binárias, ABB, Árvore AVL, Árvore Rubro-negra e Árvore B.
 
 #### Atividade para o Sigaa
 - [x] Atividade 1(Slide 2) - Atividade Escrita
 - [x] Atividade 2(Slide 5) - Formulário
 
 ### Atividade em Sala
-- [ ] Atividade(Slide 6)
+- [x] Atividade(Slide 6)
 
 #### Trabalho Prático
 - [x] Trabalho Prático 1(Slide 3) - Árvore Binária Expressão Aritmética 
