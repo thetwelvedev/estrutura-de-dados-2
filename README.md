@@ -13,11 +13,11 @@
 - [x] Atividade 2(Slide 5) - Formulário
 
 ### Atividade em Sala
-- [ ] Atividade(Slide 6)
+- [x] Atividade(Slide 6)
 
 #### Trabalho Prático
-- [ ] Trabalho Prático 1(Slide 3) - Árvore Binária Expressão Aritmética 
-- [ ] Trabalho Prático 2(Slide 4) - Árvore Binaria de Busca e Árvore AVL
+- [x] Trabalho Prático 1(Slide 3) - Árvore Binária Expressão Aritmética 
+- [x] Trabalho Prático 2(Slide 4) - Árvore Binaria de Busca e Árvore AVL
 
 ### Ferramentas e linguagens utilizadas:
 <div>
