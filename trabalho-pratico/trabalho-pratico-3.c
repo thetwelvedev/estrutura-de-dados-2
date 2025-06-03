@@ -110,6 +110,12 @@ void construirMinHeap(int arr[], int tamanho) {
     }
 }
 
+//Cabeçalho dos desafios
+void maxHeapificarParaCima(int arr[], int i);
+void inserirMaxHeap(int arr[], int *tamanho, int valor);
+void minHeapificarParaCima(int arr[], int i);
+void inserirMinHeap(int arr[], int *tamanho, int valor);
+
 // --- Função Principal (Main) para Teste ---
 int main() {
     // Exemplo para Heap Máxima
@@ -118,7 +124,7 @@ int main() {
 
     imprimirVetor(vetor_max, tamanho_max, "Vetor Original (para Max Heap)");
     construirMaxHeap(vetor_max, tamanho_max);
-    imprimirVetor(vetor_max, tamanho_max, "Max Heap Construída");
+    imprimirVetor(vetor_max, tamanho_max, "Max Heap Construida");
 
     printf("\n"); // Adiciona uma linha em branco para melhor visualização
 
@@ -128,7 +134,57 @@ int main() {
 
     imprimirVetor(vetor_min, tamanho_min, "Vetor Original (para Min Heap)");
     construirMinHeap(vetor_min, tamanho_min);
-    imprimirVetor(vetor_min, tamanho_min, "Min Heap Construída");
+    imprimirVetor(vetor_min, tamanho_min, "Min Heap Construida");
+
+    printf("\n"); // Adiciona uma linha em branco para melhor visualização
+
+    //Teste do desafio 1
+    //Maxheap -> elementos 14, 30, 17
+    inserirMaxHeap(vetor_max, &tamanho_max, 14);
+    inserirMaxHeap(vetor_max, &tamanho_max, 30);
+    inserirMaxHeap(vetor_max, &tamanho_max, 17);
+    imprimirVetor(vetor_max, tamanho_max, "Max Heap com insercao dos elementos 14, 30, 17");
+
+    //Minheap -> elementos 7, 32, 13
+    inserirMinHeap(vetor_min, &tamanho_min, 7);
+    inserirMinHeap(vetor_min, &tamanho_min, 32);
+    inserirMinHeap(vetor_min, &tamanho_min, 13);
+    imprimirVetor(vetor_min, tamanho_min, "Min Heap com insercao dos elementos 7, 32, 13");
 
     return 0; // Indica que o programa terminou com sucesso
+}
+
+//Desafio 1: Inserção de Elemento em Heap (Max e Min)
+void maxHeapificarParaCima(int arr[], int i){
+    if(i == 0){
+        return; //caso for raiz não precisa continuar 
+    }
+    if(arr[i] > arr[obterPai(i)]){ //Aqui ele compara com o pai
+        trocar(&arr[i], &arr[obterPai(i)]); //Efetua a troca
+        maxHeapificarParaCima(arr, obterPai(i));//Continua recursivamente com pai por conta da troca de posição
+    }
+}
+
+void inserirMaxHeap(int arr[], int *tamanho, int valor){
+    (*tamanho)++; //Incrementa pois ao adicionar um novo elemento o vetor aumenta
+    int novo_index = *tamanho - 1; //Como o tamanho começa do 1 e index do 0, tem colocar o -1
+    arr[novo_index] = valor; //Aqui é atribuido um valor já com nova posição do array
+    maxHeapificarParaCima(arr, novo_index); //Aplica essa função para posicinar corretamente no array
+}
+
+void minHeapificarParaCima(int arr[], int i){
+    if(i == 0){
+        return; //caso for raiz não precisa continuar 
+    }
+    if(arr[i] < arr[obterPai(i)]){//Comparo se o filho menor que o pai
+        trocar(&arr[i], &arr[obterPai(i)]);//faz troca passando os endereços
+        minHeapificarParaCima(arr, obterPai(i));//Chama recursivamente
+    }
+}
+
+void inserirMinHeap(int arr[], int *tamanho, int valor){
+    (*tamanho)++;//Atualizo o tamanho do vetor pois vou adicionar um novo elemento
+    int novo_index = *tamanho - 1; //Aqui faço a atribuição do tamanho a essa variável que vai armazenar o valor do meu indice novo
+    arr[novo_index] = valor;//Armazeno o valor na variável
+    minHeapificarParaCima(arr, novo_index);//Chamo função para arrumar a posição dos elementos
 }
