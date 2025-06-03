@@ -3,6 +3,8 @@ Matrícula: 2022009946*/
 #include <stdio.h> // Para entrada e saída (printf)
 #include <stdlib.h> // Para funções gerais (como malloc, se necessário, mas não neste exemplo)
 
+#define MAX_TAM 100 //Tive qey implementar pois tava com probleam na inserção já que acessava espaços não alocados
+
 // --- Funções Auxiliares Comuns ---
 
 // Troca os valores de duas variáveis inteiras
@@ -115,12 +117,14 @@ void maxHeapificarParaCima(int arr[], int i);
 void inserirMaxHeap(int arr[], int *tamanho, int valor);
 void minHeapificarParaCima(int arr[], int i);
 void inserirMinHeap(int arr[], int *tamanho, int valor);
+int extrairMaxHeap(int arr[], int *tamanho);
+int extrairMinHeap(int arr[], int *tamanho);
 
 // --- Função Principal (Main) para Teste ---
 int main() {
     // Exemplo para Heap Máxima
-    int vetor_max[] = {4, 10, 3, 5, 1, 8, 12};
-    int tamanho_max = sizeof(vetor_max) / sizeof(vetor_max[0]);
+    int vetor_max[MAX_TAM] = {4, 10, 3, 5, 1, 8, 12};
+    int tamanho_max = 7;
 
     imprimirVetor(vetor_max, tamanho_max, "Vetor Original (para Max Heap)");
     construirMaxHeap(vetor_max, tamanho_max);
@@ -129,8 +133,8 @@ int main() {
     printf("\n"); // Adiciona uma linha em branco para melhor visualização
 
     // Exemplo para Heap Mínima
-    int vetor_min[] = {4, 10, 3, 5, 1, 8, 12};
-    int tamanho_min = sizeof(vetor_min) / sizeof(vetor_min[0]);
+    int vetor_min[MAX_TAM] = {4, 10, 3, 5, 1, 8, 12};
+    int tamanho_min = 7;
 
     imprimirVetor(vetor_min, tamanho_min, "Vetor Original (para Min Heap)");
     construirMinHeap(vetor_min, tamanho_min);
@@ -150,6 +154,19 @@ int main() {
     inserirMinHeap(vetor_min, &tamanho_min, 32);
     inserirMinHeap(vetor_min, &tamanho_min, 13);
     imprimirVetor(vetor_min, tamanho_min, "Min Heap com insercao dos elementos 7, 32, 13");
+
+    printf("\n"); // Adiciona uma linha em branco para melhor visualização
+
+    //Remoção dos elementos - 2 de cada
+    printf("Elemento removido: %d\n", extrairMaxHeap(vetor_max, &tamanho_max));
+    imprimirVetor(vetor_max, tamanho_max, "Max Heap com remocao de 1 dos elementos");
+    printf("Elemento removido: %d\n", extrairMaxHeap(vetor_max, &tamanho_max));
+    imprimirVetor(vetor_max, tamanho_max, "Max Heap com remocao de 2 dos elementos");
+
+    printf("Elemento removido: %d\n", extrairMinHeap(vetor_min, &tamanho_min));
+    imprimirVetor(vetor_min, tamanho_min, "Min Heap com remocao de 1 dos elementos");
+    printf("Elemento removido: %d\n", extrairMinHeap(vetor_min, &tamanho_min));
+    imprimirVetor(vetor_min, tamanho_min, "Min Heap com remocao de 2 dos elementos");
 
     return 0; // Indica que o programa terminou com sucesso
 }
@@ -187,4 +204,28 @@ void inserirMinHeap(int arr[], int *tamanho, int valor){
     int novo_index = *tamanho - 1; //Aqui faço a atribuição do tamanho a essa variável que vai armazenar o valor do meu indice novo
     arr[novo_index] = valor;//Armazeno o valor na variável
     minHeapificarParaCima(arr, novo_index);//Chamo função para arrumar a posição dos elementos
+}
+
+//Desafio 2: Extração de Elemento (Remoção da Raiz) em Heap (Max e Min)
+
+int extrairMaxHeap(int arr[], int *tamanho){
+    if(*tamanho == 0){//Verifica se tá vazio o vetor
+        return -1;
+    }
+    int valor_raiz = arr[0]; //Salva o valor da raiz
+    arr[0] = arr[*tamanho - 1]; //O último elemento vai para raiz
+    (*tamanho)--;//Como ouve a remoção do elemento, então diminui o tamanho do vetor
+    maxHeapificarParaBaixo(arr, *tamanho, 0);//Vai realizar a correção das posições a partir da raiz, já que último elemento foi para raiz
+    return valor_raiz; //Retorna o elemento da raiz
+}
+
+int extrairMinHeap(int arr[], int *tamanho){
+    if(*tamanho == 0){//Verifica se tá vazio o vetor
+        return -1;
+    }
+    int valor_raiz = arr[0]; //Salva o valor da raiz
+    arr[0] = arr[*tamanho - 1]; //O último elemento vai para raiz
+    (*tamanho)--;//Diminui o tamanho do vetor por conta remoção do elemento da raiz
+    minHeapificarParaBaixo(arr, *tamanho, 0);//Vai realizar a correção das posições a partir da raiz, já que último elemento foi para raiz
+    return valor_raiz; //Retorna o elemento retirado
 }
