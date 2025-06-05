@@ -157,6 +157,7 @@ int main() {
 
     printf("\n"); // Adiciona uma linha em branco para melhor visualização
 
+    //Teste do desafio 2
     //Remoção dos elementos - 2 de cada
     printf("Elemento removido: %d\n", extrairMaxHeap(vetor_max, &tamanho_max));
     imprimirVetor(vetor_max, tamanho_max, "Max Heap com remocao de 1 dos elementos");
@@ -229,3 +230,5 @@ int extrairMinHeap(int arr[], int *tamanho){
     minHeapificarParaBaixo(arr, *tamanho, 0);//Vai realizar a correção das posições a partir da raiz, já que último elemento foi para raiz
     return valor_raiz; //Retorna o elemento retirado
 }
+
+//Desafio 3: Implementando Heap Sort (Ordenação com Heap)  
