@@ -119,6 +119,7 @@ void minHeapificarParaCima(int arr[], int i);
 void inserirMinHeap(int arr[], int *tamanho, int valor);
 int extrairMaxHeap(int arr[], int *tamanho);
 int extrairMinHeap(int arr[], int *tamanho);
+void heapSort(int arr[], int tamanho);
 
 // --- Função Principal (Main) para Teste ---
 int main() {
@@ -168,6 +169,16 @@ int main() {
     imprimirVetor(vetor_min, tamanho_min, "Min Heap com remocao de 1 dos elementos");
     printf("Elemento removido: %d\n", extrairMinHeap(vetor_min, &tamanho_min));
     imprimirVetor(vetor_min, tamanho_min, "Min Heap com remocao de 2 dos elementos");
+
+    printf("\n"); // Adiciona uma linha em branco para melhor visualização
+
+    //Teste do desafio 3
+    int vetor[] = {7, 2, 9, 1, 5, 3, 8, 4, 6};
+    int tamanho = sizeof(vetor)/sizeof(vetor[0]);
+    imprimirVetor(vetor, tamanho, "Vetor Original");
+
+    heapSort(vetor, tamanho);
+    imprimirVetor(vetor, tamanho, "Vetor Ordenado");
 
     return 0; // Indica que o programa terminou com sucesso
 }
@@ -232,3 +243,10 @@ int extrairMinHeap(int arr[], int *tamanho){
 }
 
 //Desafio 3: Implementando Heap Sort (Ordenação com Heap)  
+void heapSort(int arr[], int tamanho){
+    construirMaxHeap(arr, tamanho); //Faz construção do Max Heap
+    for (int i = tamanho - 1; i >= 1; i--) {
+        trocar(&arr[0], &arr[i]); //Troca a raiz, que é o maior elemento com último ainda não ordenado
+        maxHeapificarParaBaixo(arr, i, 0); //Aplica o Max Heap em cada subarray não ordenado
+    }
+}
