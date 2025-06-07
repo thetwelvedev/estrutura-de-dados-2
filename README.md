@@ -18,7 +18,7 @@
 #### Trabalho Prático
 - [x] Trabalho Prático 1(Slide 3) - Árvore Binária Expressão Aritmética 
 - [x] Trabalho Prático 2(Slide 4) - Árvore Binaria de Busca e Árvore AVL
-- [ ] Trabalho Prático 3(Slide 7) - Dominando Heaps em C
+- [x] Trabalho Prático 3(Slide 7) - Dominando Heaps em C
 
 ### Ferramentas e linguagens utilizadas:
 <div>
