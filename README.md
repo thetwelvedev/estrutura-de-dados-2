@@ -6,7 +6,7 @@
 ### Exercícios da matéria de Estrutura de Dados 2 de 2025.1 de Ciências da Computação
 
 ### Assutos estudados
->Árvores..
+>Árvores, Árvore de Busca Binária, Árvore AVL, Árvore Rubro Negra, Árvore B, Heap, Árvore de Segmentos, Lazy Propagation...
 
 #### Atividade para o Sigaa
 - [x] Atividade 1(Slide 2) - Atividade Escrita
