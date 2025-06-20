@@ -34,7 +34,7 @@ void maxHeapifyUp(int arr[], int idx){
         return;
     }
     if(arr[idx] > arr[getFather(idx)]){//Haverá troca caso o filho seja maior que o pai
-        swap(&arr[idx], arr[getFather(idx)]);
+        swap(&arr[idx], &arr[getFather(idx)]);
         maxHeapifyUp(arr, getFather(idx));
     }
 }
@@ -44,7 +44,7 @@ void MinHeapifyUp(int arr[], int idx){
         return;
     }
     if(arr[idx] < arr[getFather(idx)]){//Haverá troca caso o filho seja maior que o pai
-        swap(&arr[idx], arr[getFather(idx)]);
+        swap(&arr[idx], &arr[getFather(idx)]);
         MinHeapifyUp(arr, getFather(idx));
     }
 }
@@ -132,6 +132,14 @@ int removeMinHeap(int arr[], int *length){
     return  root_value;
 }
 
+//Funções - heapSort
+void heapSort(int arr[], int length){
+    buildMaxHeap(arr, length); //Faz construção do Max Heap
+    for (int i = length - 1; i >= 1; i--) {
+        swap(&arr[0], &arr[i]); //Troca a raiz, que é o maior elemento com último ainda não ordenado
+        MaxHeapifyDown(arr, i, 0); //Aplica o Max Heap em cada subarray não ordenado
+    }
+}
 
 int main(){
 
