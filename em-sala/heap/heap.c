@@ -141,7 +141,47 @@ void heapSort(int arr[], int length){
     }
 }
 
-int main(){
+int main() {
+    int maxHeap[100];
+    int minHeap[100];
+    int maxLength = 0;
+    int minLength = 0;
 
+    // Inserindo valores
+    insertMaxHeap(maxHeap, &maxLength, 10);
+    insertMaxHeap(maxHeap, &maxLength, 4);
+    insertMaxHeap(maxHeap, &maxLength, 15);
+    insertMaxHeap(maxHeap, &maxLength, 20);
+    insertMaxHeap(maxHeap, &maxLength, 2);
+
+    insertMinHeap(minHeap, &minLength, 10);
+    insertMinHeap(minHeap, &minLength, 4);
+    insertMinHeap(minHeap, &minLength, 15);
+    insertMinHeap(minHeap, &minLength, 20);
+    insertMinHeap(minHeap, &minLength, 2);
+
+    // Exibir heaps construídos
+    printVector(maxHeap, maxLength, "Max Heap após inserções");
+    printVector(minHeap, minLength, "Min Heap após inserções");
+
+    // Remover raiz (máximo e mínimo)
+    int max = removeMaxHeap(maxHeap, &maxLength);
+    int min = removeMinHeap(minHeap, &minLength);
+    printf("Removido da Max Heap (maior): %d\n", max);
+    printf("Removido da Min Heap (menor): %d\n", min);
+
+    // Exibir heaps após remoção
+    printVector(maxHeap, maxLength, "Max Heap após remoção");
+    printVector(minHeap, minLength, "Min Heap após remoção");
+
+    // Teste de HeapSort
+    int arr[] = {12, 3, 7, 1, 9, 15, 0};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    printVector(arr, n, "Original para HeapSort");
+    heapSort(arr, n);
+    printVector(arr, n, "Após HeapSort (crescente)");
+
+    return 0;
 }
+
 
