@@ -35,7 +35,7 @@ void maxHeapifyUp(int arr[], int idx){
     }
     if(arr[idx] > arr[getFather(idx)]){//Haverá troca caso o filho seja maior que o pai
         swap(&arr[idx], arr[getFather(idx)]);
-        maxHeapifyUp(arr, arr[getFather(idx)]);
+        maxHeapifyUp(arr, getFather(idx));
     }
 }
 
@@ -45,7 +45,7 @@ void MinHeapifyUp(int arr[], int idx){
     }
     if(arr[idx] < arr[getFather(idx)]){//Haverá troca caso o filho seja maior que o pai
         swap(&arr[idx], arr[getFather(idx)]);
-        MinHeapifyUp(arr, arr[getFather(idx)]);
+        MinHeapifyUp(arr, getFather(idx));
     }
 }
 
