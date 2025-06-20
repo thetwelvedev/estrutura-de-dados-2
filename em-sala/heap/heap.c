@@ -28,9 +28,42 @@ void printVector(int arr[], int n, const char *message) {
     }
     printf("]\n");
 }
+//Funções - MaxHeapifyUp, MinHeapifyUp, insertMaxHeap, insertMinHeap
+void maxHeapifyUp(int arr[], int idx){
+    if(idx == 0){ // Está na raiz não tem mais o que comparar
+        return -1;
+    }
+    if(arr[idx] > arr[getFather(idx)]){//Haverá troca caso o filho seja maior que o pai
+        swap(&arr[idx], arr[getFather(idx)]);
+        maxHeapifyUp(arr, arr[getFather(idx)]);
+    }
+}
 
-//Funções - MaxHeapifyUp, MinHeapifyUp, removeMaxHeap, removeMinHeap
-//Funções - MaxHeapifyDown, MinHeapifyDown, buildMaxHeap, buildMinHeap, insertMaxHeap, insertMinHeap
+void MinHeapifyUp(int arr[], int idx){
+    if(idx == 0){ // Está na raiz não tem mais o que comparar
+        return -1;
+    }
+    if(arr[idx] < arr[getFather(idx)]){//Haverá troca caso o filho seja maior que o pai
+        swap(&arr[idx], arr[getFather(idx)]);
+        MinHeapifyUp(arr, arr[getFather(idx)]);
+    }
+}
+
+void insertMaxHeap(int arr[], int *lenght, int value){
+    (*lenght)++; //Aumenta o tamanho do vetor
+    int new_idx = *lenght - 1;
+    arr[new_idx] = value;
+    maxHeapifyUp(arr, new_idx);
+}
+
+void insertMinHeap(int arr[], int *lenght, int value){
+    (*lenght)++; //Aumenta o tamanho do vetor
+    int new_idx = *lenght - 1;
+    arr[new_idx] = value;
+    minHeapifyUp(arr, new_idx);
+}
+
+//Funções - MaxHeapifyDown, MinHeapifyDown, buildMaxHeap, buildMinHeap,removeMaxHeap, removeMinHeap
 //Funções - heapSort
 
 int main(){
