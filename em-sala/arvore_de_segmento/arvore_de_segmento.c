@@ -11,21 +11,21 @@ void build(int node, int start, int end) {
         tree[node] = arr[start];
     } else {
         int mid = (start + end) / 2;
-        build(2 * node, start, mid);
-        build(2 * node + 1, mid + 1, end);
+        build(2 * node + 1, start, mid);
+        build(2 * node + 2, mid + 1, end);
         tree[node] = tree[2 * node] + tree[2 * node + 1];
     }
 }
 
 // Propagar atualizações pendentes (Lazy)
 void push_down(int node, int start, int end) {
-    if (lazy[node] != 0) {
+    if (lazy[node] != 0) {// Verifica se tem atualização pendente
         // Aplica o valor pendente ao nó atual
         tree[node] += lazy[node] * (end - start + 1);
         if (start != end) {
             // Propaga para os filhos
-            lazy[2 * node] += lazy[node];
             lazy[2 * node + 1] += lazy[node];
+            lazy[2 * node + 2] += lazy[node];
         }
         lazy[node] = 0; // Limpa o valor lazy
     }
@@ -44,8 +44,8 @@ void update_range(int node, int start, int end, int l, int r, int val) {
     }
 
     int mid = (start + end) / 2;
-    update_range(2 * node, start, mid, l, r, val);
-    update_range(2 * node + 1, mid + 1, end, l, r, val);
+    update_range(2 * node + 1, start, mid, l, r, val);
+    update_range(2 * node + 2, mid + 1, end, l, r, val);
     tree[node] = tree[2 * node] + tree[2 * node + 1];
 }
 
@@ -75,7 +75,7 @@ int main() {
     }
 
     // Construção da árvore
-    build(1, 0, n - 1);
+    build(0, 0, n - 1);
 
     // Consulta inicial [1, 3]
     printf("Soma de [1, 3] = %d\n", query_range(1, 0, n - 1, 1, 3)); // Esperado: 3 + 5 + 2 = 10
