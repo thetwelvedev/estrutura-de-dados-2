@@ -6,7 +6,7 @@
 ### Exercícios da matéria de Estrutura de Dados 2 de 2025.1 de Ciências da Computação
 
 ### Assutos estudados
->Árvores, Árvore de Busca Binária, Árvore AVL, Árvore Rubro Negra, Árvore B, Heap, Heapsort, Árvore de Segmentos, Lazy Propagation, Hashing, grafos, algoritmo de prim, algoritmo de kruskal...
+>Árvores, Árvore de Busca Binária, Árvore AVL, Árvore Rubro Negra, Árvore B, Heap, Heapsort, Árvore de Segmentos, Lazy Propagation, Hashing, grafos, algoritmo de prim, algoritmo de kruskal, algoritmo de Dijkstra...
 
 #### Atividade para o Sigaa
 - [x] Atividade 1(Slide 2) - Atividade Escrita
@@ -22,6 +22,7 @@
 - [x] Trabalho Prático 2(Slide 4) - Árvore Binaria de Busca e Árvore AVL
 - [x] Trabalho Prático 3(Slide 7) - Dominando Heaps em C
 - [x] Trabalho Prático 4(Em grupo) - Tabela Hashing
+- [x] Trabalho Prático 5(Individual) - Algoritmo de Dijkstra
 
 ### Ferramentas e linguagens utilizadas:
 <div>
