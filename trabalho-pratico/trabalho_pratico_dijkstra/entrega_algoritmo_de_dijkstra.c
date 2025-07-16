@@ -171,6 +171,23 @@ void executarDijkstra(Grafo* grafo, int inicioVertice, int* distancias, int* pai
     free(visitado);
 }
 
+void mostrarGrafo(Grafo* grafo, char* nomes[]) {
+    printf("\n--- Grafo completo (arestas com pesos) ---\n");
+    for (int i = 0; i < grafo->numVertices; i++) {
+        Aresta* atual = grafo->listasAdj[i];
+        while (atual != NULL) {
+            // Para não repetir arestas em grafos não direcionados
+            if (i < atual->destino) {
+                printf("%s (%d) -- %d --> %s (%d)\n",
+                    nomes[i], i,
+                    atual->peso,
+                    nomes[atual->destino], atual->destino);
+            }
+            atual = atual->proxima;
+        }
+    }
+}
+
 int main() {
     int numVertices = 8;
     Grafo* grafo = criarGrafo(numVertices);
@@ -202,6 +219,8 @@ int main() {
 
     executarDijkstra(grafo, inicio, distancias, pais);
     imprimirDistancias(inicio, distancias, nomes, numVertices);
+
+    mostrarGrafo(grafo, nomes);
 
     // Interação com o usuário
     int destino;
