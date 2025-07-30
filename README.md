@@ -23,7 +23,7 @@
 - [x] Trabalho Prático 3(Slide 7) - 05/06 - Dominando Heaps em C
 - [x] Trabalho Prático 4(Em grupo) - 24/06 - Tabela Hashing
 - [x] Trabalho Prático 5(Individual) - 17/07 - Algoritmo de Dijkstra
-- [ ] Trabalho Final - 29/07 - Caixeiro Viajante
+- [ ] Trabalho Final - 31/07 - Problema do Caixeiro Viajante usando Algoritmos Genéticos
 
 ### Ferramentas e linguagens utilizadas:
 <div>
