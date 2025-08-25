@@ -3,7 +3,7 @@
   estrutura-de-dados-2
 </h1>
 
-### Exercícios da matéria de Estrutura de Dados 2 de 2025.1 de Ciências da Computação
+### Exercícios e trabalhos da matéria de Estrutura de Dados 2 de 2025.1 de Ciências da Computação
 
 ### Assutos estudados
 >Árvores, Árvore de Busca Binária, Árvore AVL, Árvore Rubro Negra, Árvore B, Heap, Heapsort, Árvore de Segmentos, Lazy Propagation, Hashing, grafos, algoritmo de prim, algoritmo de kruskal, algoritmo de Dijkstra e Caixeiro Viajante.
